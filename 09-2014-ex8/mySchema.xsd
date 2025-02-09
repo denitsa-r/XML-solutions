@@ -1,8 +1,94 @@
 <?xml version="1.0" encoding="UTD-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="biographies">
     <xs:complexType>
       <xs:sequence>
-      </xs
+        <xs:element name="record" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="names"/>
+                    <xs:element ref="date_of_birth"/>
+                    <xs:element ref="place_of_birth"/>
+                    <xs:element ref="citizenship"/>
+                    <xs:element ref="address"/>
+                    <xs:element ref="phone"/>
+                    <xs:element ref="email"/>
+                    <xs:element ref="education" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="id" type="xs:ID" use="required"/> 
+            </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
   </xs:element>
+
+  <xs:element name="names">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="first_name" type="xs:string"/>
+            <xs:element name="middle_name" type="xs:string" minOccurs="0"/>
+            <xs:element name="last_name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="date_of_birth" type="xs:date"/>
+  <xs:element name="place_of_birth" type="xs:string"/>
+  <xs:element name="citizenship" type="xs:string"/>
+  <xs:element name="address">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="country" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="street">
+                <xs:complexType>
+                    <xs:simpleContent>  
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="number" type="xs:integer" use="optional"/>
+                        </xs:extension>
+                    </xs:simpleContent>  
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="phone" type="xs:string"/>
+  <xs:element name="email" type="xs:string"/>
+
+  <xs:element name="education">
+    <xs:complexType>
+        <xs:sequence>   
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="specialty" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="type" use="optional">
+                                <xs:simpleType> 
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Bachelor"/>
+                                        <xs:enumeration value="Master"/>
+                                        <xs:enumeration value="Doctor"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                            <xs:attribute name="year_of_diploma" type="xs:string"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="type" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="school"/>
+                    <xs:enumeration value="university"/>
+                    <xs:enumeration value="course"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
 </xs:schema>

@@ -16,7 +16,7 @@
 <!ELEMENT country (#PCDATA)>
 <!ELEMENT city (#PCDATA)>
 <!ELEMENT street (#PCDATA)>
-<!ATTLIST street number CDATA #REQUIRED>
+<!ATTLIST street number CDATA #IMPLIED>
 
 <!ELEMENT phone (#PCDATA)>
 <!ELEMENT email (#PCDATA)>
