@@ -1,0 +1,28 @@
+<!ELEMENT biographies (record*)>
+<!ATTLIST biographies xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation CDATA #FIXED "mySchema.xsd">
+<!ELEMENT record (names, date_of_birth, place_of_birth, citizenship, address, phone, email, education*)>
+<!ATTLIST record id ID #REQUIRED>
+
+<!ELEMENT names (first_name, middle_name?, last_name)>
+<!ELEMENT first_name (#PCDATA)>
+<!ELEMENT middle_name (#PCDATA)>
+<!ELEMENT last_name (#PCDATA)>
+
+<!ELEMENT date_of_birth (#PCDATA)>
+<!ELEMENT place_of_birth (#PCDATA)>
+<!ELEMENT citizenship (#PCDATA)>
+
+<!ELEMENT address (country, city, street)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ATTLIST street number CDATA #REQUIRED>
+
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT education (name, specialty*)>
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST education type (school|university|course) #REQUIRED>
+<!ELEMENT specialty (#PCDATA)>
+<!ATTLIST specialty type (Bachelor| Master| Doctor) #IMPLIED
+                    year_of_diploma CDATA #REQUIRED>

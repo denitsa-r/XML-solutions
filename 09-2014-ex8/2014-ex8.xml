@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biographies SYSTEM "myDtd.dtd">
+<biographies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="mySchema.xsd">
+  <record id="rec001">
+    <names>
+      <first_name>Ime</first_name>
+      <middle_name>Ime</middle_name>
+      <last_name>Ime</last_name>
+    </names>
+    <date_of_birth>1999-12-12</date_of_birth>
+    <place_of_birth>Grad</place_of_birth>
+    <citizenship>Bulgarsko</citizenship>
+    <address>
+      <country>Bulgaria</country>
+      <city>Grad</city>
+      <street number="11">Ulitsa</street>
+    </address>
+    <phone>0895671232</phone>
+    <email>neshto.drugo@abv.bg</email>
+    <education type="school">
+      <name>
+        Uchilishte
+      </name>
+    </education>
+    <education type="university">
+      <name>
+        Uni
+      </name>
+      <specialty type="Bachelor" year_of_diploma="2019">SE</specialty>
+      <specialty type="Master" year_of_diploma="2021">SE</specialty>
+      <specialty type="Doctor" year_of_diploma="2024">SE</specialty>
+    </education>
+  </record>
+  <record id="rec002">
+    <names>
+      <first_name>Ime</first_name>
+      <last_name>Ime</last_name>
+    </names>
+    <date_of_birth>1999-12-12</date_of_birth>
+    <place_of_birth>Grad</place_of_birth>
+    <citizenship>Bulgarsko</citizenship>
+    <address>
+      <country>Bulgaria</country>
+      <city>Grad</city>
+      <street number="11">Ulitsa</street>
+    </address>
+    <phone>0895671232</phone>
+    <email>neshto.drugo@abv.bg</email>
+    <education type="school">
+      <name>
+        Uchilishte
+      </name>
+    </education>
+    <education type="university">
+      <name>
+        Uni
+      </name>
+      <specialty type="Bachelor" year_of_diploma="2019">SE</specialty>
+    </education>
+  </record>
+  <record id="rec003">
+    <names>
+      <first_name>Ime</first_name>
+      <middle_name>Ime</middle_name>
+      <last_name>Ime</last_name>
+    </names>
+    <date_of_birth>1999-12-12</date_of_birth>
+    <place_of_birth>Grad</place_of_birth>
+    <citizenship>Bulgarsko</citizenship>
+    <address>
+      <country>Bulgaria</country>
+      <city>Grad</city>
+      <street number="11">Ulitsa</street>
+    </address>
+    <phone>0895671232</phone>
+    <email>neshto.drugo@abv.bg</email>
+    <education type="school">
+      <name>
+        Uchilishte
+      </name>
+      <specialty year_of_diploma="2015">SE profile</specialty>
+    </education>
+    <education type="university">
+      <name>
+        Uni Name
+      </name>
+      <specialty type="Bachelor" year_of_diploma="2019">SE</specialty>
+    </education>
+    <education type="course">
+      <name>
+        SoftUni
+      </name>
+      <specialty year_of_diploma="2016">UX/UI design</specialty>
+    </education>
+  </record>
+</biographies>

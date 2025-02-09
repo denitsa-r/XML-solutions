@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notebook [
+  <!ELEMENT notebook (record*)>
+  <!ELEMENT record (first_name, father_name, last_name, address, date_of_birth?, phones?)>
+  <!ELEMENT first_name (#PCDATA)>
+  <!ELEMENT father_name (#PCDATA)>
+  <!ELEMENT last_name (#PCDATA)>
+  <!ELEMENT address (place_of_living, street)>
+  <!ELEMENT place_of_living (#PCDATA)>
+  <!ELEMENT street (#PCDATA)>
+  <!ELEMENT date_of_birth (#PCDATA)>
+  <!ELEMENT phones (phone*)>
+  <!ELEMENT phone (#PCDATA)>
+  <!ATTLIST record type (relative|colleague|acquaintance) #REQUIRED
+                    id ID #REQUIRED>
+  <!ATTLIST address post_code CDATA #REQUIRED>
+  <!ATTLIST street number CDATA #REQUIRED>
+  <!ATTLIST phone type (personal|work) #REQUIRED>
+  <!ATTLIST notebook xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation CDATA #FIXED "mySchema.xsd">
+]>
+<notebook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="mySchema.xsd">
+  <record type="relative" id="rec001">
+    <first_name>Denitsa</first_name>
+    <father_name>Krasimirova</father_name>
+    <last_name>Rashkova</last_name>
+    <address post_code="4270">
+      <place_of_living>Purvomai</place_of_living>
+      <street number="11">Dragoyna</street>
+    </address>
+    <date_of_birth>2003-07-14</date_of_birth>
+    <phones>
+      <phone type="personal">
+        0895475236
+      </phone>
+    </phones>
+  </record>
+  <record type="colleague" id="rec002">
+    <first_name>Nqkoi</first_name>
+    <father_name>Bashta</father_name>
+    <last_name>Familiq</last_name>
+    <address post_code="1234">
+      <place_of_living>Ime</place_of_living>
+      <street number="11">Ime</street>
+    </address>
+    <date_of_birth>2003-07-14</date_of_birth>
+    <phones>
+      <phone type="work">
+        0895475236
+      </phone>
+    </phones>
+  </record>
+  <record type="acquaintance" id="rec003">
+    <first_name>Nqkoi</first_name>
+    <father_name>Bashta</father_name>
+    <last_name>Familiq</last_name>
+    <address post_code="1234">
+      <place_of_living>Ime</place_of_living>
+      <street number="11">Ime</street>
+    </address>
+    <date_of_birth>2003-07-14</date_of_birth>
+    <phones>
+      <phone type="work">
+        0895475236
+      </phone>
+    </phones>
+  </record>
+</notebook>
