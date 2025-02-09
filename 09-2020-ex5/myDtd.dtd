@@ -1,0 +1,21 @@
+<!ELEMENT HotelCatalog (HotelChain*, Hotel+, Service*)>
+<!ATTLIST HotelCatalog Version CDATA #REQUIRED>
+
+<!ELEMENT HotelChain (ChainName, ChainOwner?)>
+<!ATTLIST HotelChain chain_id ID #REQUIRED>
+<!ELEMENT ChainName (#PCDATA)>
+<!ELEMENT ChainOwner (#PCDATA)>
+
+<!ELEMENT Hotel (HotelName, HotelAddress, HotelImg)>
+<!ATTLIST Hotel chain_ref IDREF #IMPLIED
+        	    service_refs IDREFS #IMPLIED>
+<!ELEMENT HotelName (#PCDATA)>
+<!ELEMENT HotelAddress (#PCDATA)>
+<!ELEMENT HotelImg EMPTY>
+<!ATTLIST HotelImg src ENTITY #REQUIRED>
+
+<!ELEMENT Service (ServiceName, ServiceDescr?)>
+<!ATTLIST Service Included (YES|NO) #IMPLIED
+                    service_id ID #REQUIRED>
+<!ELEMENT ServiceName (#PCDATA)>
+<!ELEMENT ServiceDescr (#PCDATA)>

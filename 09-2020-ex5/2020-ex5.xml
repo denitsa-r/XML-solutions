@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HotelCatalog SYSTEM "myDtd.dtd" [
+    <!NOTATION jpeg SYSTEM "image/jpeg">
+    <!ENTITY hotel_img1 SYSTEM "link" NDATA jpeg>
+    <!ENTITY hotel_img2 SYSTEM "link" NDATA jpeg>
+    <!ENTITY hotel_img3 SYSTEM "link" NDATA jpeg>
+]>
+
+<HotelCatalog Version="v0.1">
+    <HotelChain chain_id="chain001">
+        <ChainName>Ime VEriga</ChainName>
+    </HotelChain>
+    <HotelChain chain_id="chain002">
+        <ChainName>Ime VEriga 2</ChainName>
+        <ChainOwner>Ime Owner</ChainOwner>
+    </HotelChain>
+
+    <Hotel chain_ref="chain002">
+        <HotelName>Name 1</HotelName>
+        <HotelAddress>Address 1</HotelAddress>
+        <HotelImg src="hotel_img1"></HotelImg>
+    </Hotel>
+    <Hotel chain_ref="chain001" service_refs="ser001 ser003">
+        <HotelName>Name 2</HotelName>
+        <HotelAddress>Address 2</HotelAddress>
+        <HotelImg src="hotel_img2"></HotelImg>
+    </Hotel>
+    <Hotel service_refs="ser001">
+        <HotelName>Name 3</HotelName>
+        <HotelAddress>Address 3</HotelAddress>
+        <HotelImg src="hotel_img3"></HotelImg>
+    </Hotel>
+    
+    <Service Included="YES" service_id="ser001">
+        <ServiceName>Service 1</ServiceName>
+    </Service>
+    <Service Included="NO" service_id="ser002">
+        <ServiceName>Service 2</ServiceName>
+        <ServiceDescr>Neshto</ServiceDescr>
+    </Service>
+    <Service Included="YES" service_id="ser003">
+        <ServiceName>Service 3</ServiceName>
+        <ServiceDescr>Neshto</ServiceDescr>
+    </Service>
+    <Service Included="NO" service_id="ser004">
+        <ServiceName>Service 4</ServiceName>
+    </Service>
+    <Service service_id="ser005">
+        <ServiceName>Service 5</ServiceName>
+        <ServiceDescr>Neshto</ServiceDescr>
+    </Service>
+</HotelCatalog>
